@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LibraryAPI
 {
-    class Book
+    public class Book
     {
         #region Properties
         /// <summary>
         /// ISBN of the book
         /// </summary>
+        [Key]
         public int ISBN { get; set; }
         /// <summary>
         /// Title of the book
@@ -19,7 +21,6 @@ namespace LibraryAPI
         public string Title { get; set; }
         public DateTime PublishedYear { get; set; }
         public decimal Price { get; set; }
-
         public int count { get; set; }
         #endregion
 

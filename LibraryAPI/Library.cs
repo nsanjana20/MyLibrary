@@ -23,10 +23,16 @@ namespace LibraryAPI
             Books = new List<Book>(); 
         }
         #endregion
+
         #region Methods
         public static void AddBook(Book book)
         {
-            Books.Add(book);
+            using(var model = new LibraryModel())
+            {
+                model.Books.Add(book);
+                model.SaveChanges();
+            }
+          
         }
 
         public static void PrintBooks()
